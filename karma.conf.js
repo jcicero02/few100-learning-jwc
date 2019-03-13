@@ -7,7 +7,7 @@ module.exports = (config) => {
         files: [
             { pattern: 'spec/*_spec.js', watched: false },
             { pattern: 'spec/**/*_spec.js', watched: false },
-          { pattern: 'spec/*_spec.ts', watched: false },
+            { pattern: 'spec/*_spec.ts', watched: false },
             { pattern: 'spec/**/*_spec.ts', watched: false }
         ],
 
@@ -23,7 +23,7 @@ module.exports = (config) => {
         reporters: ['progress', 'karma-typescript'],
 
         browsers: ['ChromeHeadless'], // or just 'Chrome', 'ie', 'firefox', etc.
-   
-        
+
+
     });
 };
