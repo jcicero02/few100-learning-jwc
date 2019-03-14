@@ -1,7 +1,33 @@
 import './styles.css';
-import { add, PI } from "./utils";
-console.log('Ready to Party');
+import { getRandomInt } from './utils';
 
-console.log(add(10, 18))
+const squares = document.querySelectorAll('.square');
+const count = document.getElementById('count') as HTMLSpanElement;
 
-console.log(PI)
+
+
+const secret = getRandomInt(1, 6);
+let guessCount = 0;
+console.log(secret)
+squares.forEach((sq, indx) => {
+    const el = sq as HTMLDivElement;
+    if ((indx + 1) === secret) {
+        el.dataset.secret = 'true';
+    }
+
+    sq.addEventListener('click', handleClick)
+});
+
+function handleClick() {
+    const el = this as HTMLDivElement;
+
+    guessCount++;
+    count.innerHTML = `<small>You have made <b>${guessCount}</b> guesses</small>`
+    if (el.dataset.secret) {
+        el.classList.add('winner');
+        squares.forEach(sq => sq.removeEventListener('click', handleClick));
+    } else {
+        el.classList.add('loser');
+        el.removeEventListener('click', handleClick);
+    }
+}
