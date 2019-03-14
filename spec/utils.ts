@@ -5,3 +5,6 @@ export function formatName(
     transformer: Transformer = (x) => x): string {
     return transformer(`${last}, ${first}`);
 }
+
+
+export const isEven = (n: number) => n % 2 === 0;

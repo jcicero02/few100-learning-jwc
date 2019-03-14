@@ -37,6 +37,7 @@
   "dependencies": {
     "@types/jasmine": "^3.3.5",
     "@types/lodash": "^4.14.123",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "tassign": "^1.0.0"
   }
 }
